@@ -1,3 +1,7 @@
+# Publishes the built static site to the `gh-pages` branch.
+# In repo Settings → Pages, use "Deploy from a branch" → branch `gh-pages`, folder `/ (root)`.
+# (Avoids the GitHub "Actions" Pages API that returns 404 until that product path is enabled.)
+
 name: Deploy site to GitHub Pages
 
 on:
@@ -7,16 +11,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,19 +41,11 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r categories images js assets _site/
+          touch _site/.nojekyll
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Push to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          force_orphan: true

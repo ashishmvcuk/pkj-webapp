@@ -25,16 +25,17 @@ npm run build
 
 This writes minified CSS to [`assets/css/styles.css`](assets/css/styles.css). The GitHub Action rebuilds CSS on every deploy, so the committed `assets/css/styles.css` is optional but useful for local preview without running `npm run build`.
 
-## Deploy (GitHub Pages + Actions)
+## Deploy (GitHub Pages)
 
-On every push to **`main`**, [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs `npm ci`, `npm run build`, copies the static site into `_site`, and publishes it with **GitHub Pages**.
+On every push to **`main`**, [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs `npm ci`, `npm run build`, then pushes the built folder to the **`gh-pages`** branch (via [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)).
 
 **One-time repo settings**
 
 1. GitHub repo → **Settings** → **Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+3. **Branch:** `gh-pages`, **folder:** `/ (root)` → Save
 
-After the first successful run, open **Settings → Pages** (or the job summary) for the live URL. For a project site it will look like `https://<user>.github.io/<repo>/`.
+After the first successful workflow run, the site URL is shown on that same **Pages** page, typically `https://<username>.github.io/<repo>/`.
 
 If your default branch is not `main`, edit the `on.push.branches` list in the workflow file.
 

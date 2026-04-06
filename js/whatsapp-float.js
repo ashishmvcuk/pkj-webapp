@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var WHATSAPP_DIGITS = "919303056582";
+  var WHATSAPP_DIGITS = "919302204320";
   var WHATSAPP_MESSAGE =
     "Hi Pankaj Electronics! I visited your website. How can you help me?";
 

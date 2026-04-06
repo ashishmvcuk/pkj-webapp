@@ -27,25 +27,38 @@ This writes minified CSS to [`assets/css/styles.css`](assets/css/styles.css). Th
 
 ## Deploy (GitHub Pages)
 
-On every push to **`main`**, [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs `npm ci`, `npm run build`, then pushes the built folder to the **`gh-pages`** branch (via [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)).
+Your live URL (project site) is:
 
-**One-time repo settings**
+**`https://ashishmvcuk.github.io/pkj-webapp/`**
 
-1. GitHub repo → **Settings** → **Pages**
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**
-3. **Branch:** `gh-pages`, **folder:** `/ (root)` → Save
+If you see **“There isn’t a GitHub Pages site here”** (404), Pages is not enabled yet or the wrong branch/folder is selected. Use **one** of the methods below.
 
-After the first successful workflow run, the site URL is shown on that same **Pages** page, typically `https://<username>.github.io/<repo>/`.
+### Method A — Publish from `main` (simplest, no Action required)
 
-If your default branch is not `main`, edit the `on.push.branches` list in the workflow file.
+1. Locally: `npm run build` so [`assets/css/styles.css`](assets/css/styles.css) is up to date.
+2. Commit and push **everything** the site needs on **`main`**: `index.html`, `assets/`, `categories/`, `images/`, `js/`, and [`.nojekyll`](.nojekyll) (disables Jekyll so static files are served as-is).
+3. On GitHub: open **[Settings → Pages](https://github.com/Ashishmvcuk/pkj-webapp/settings/pages)** for **`Ashishmvcuk/pkj-webapp`**.
+4. **Build and deployment → Source:** **Deploy from a branch**.
+5. **Branch:** **`main`**, **Folder:** **`/ (root)`** → **Save**.
+6. Wait **1–3 minutes**, then open **`https://ashishmvcuk.github.io/pkj-webapp/`** again (hard refresh).
 
-**GitHub project URL quirk:** Opening `…/pkj-webapp` *without* a trailing slash used to make the browser resolve `assets/…` and `js/…` against the site root (`github.io/assets/…`) instead of under the repo, so CSS/JS 404 and the page looked blank. Each HTML page now sets a `<base href>` from the current path so assets load under `/pkj-webapp/` either way.
+**Note:** For a **private** repo, GitHub Pages needs a **paid** plan. Use a **public** repo for free hosting.
 
-**Deploy fails (token / environment):**
+### Method B — Publish from `gh-pages` (GitHub Action)
 
-1. Repo **Settings → Actions → General** → scroll to **Workflow permissions** → choose **Read and write permissions** → Save. (If this stays “Read repository contents”, the job cannot push to `gh-pages`.)
-2. **Pages** should use **Deploy from a branch → `gh-pages` / (root)** — not the separate “GitHub Actions” source that uses the `github-pages` environment (that flow often 404s until fully enabled).
-3. Push the latest [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) from this repo so the workflow only pushes the `gh-pages` branch (no `deploy-pages` / `github-pages` environment).
+Use this if you prefer CI to build Tailwind and push a clean deploy branch.
+
+1. **Settings → Actions → General → Workflow permissions:** set **Read and write permissions** → **Save**.
+2. Push **`main`** so [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) runs ([JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)).
+3. **Settings → Pages:** **Deploy from a branch** → **`gh-pages`** → **`/ (root)`** → **Save** (the `gh-pages` branch must exist after a green workflow run).
+
+### Still 404?
+
+- Confirm you’re in **Settings → Pages** for the repo **`Ashishmvcuk/pkj-webapp`**, not another fork or org.
+- **Source** must not be **Disabled**.
+- Repo name in the URL is **case-sensitive**: `/pkj-webapp/` must match the repo name exactly.
+
+**Relative URL quirk:** Opening `…/pkj-webapp` without a trailing slash used to break `assets/` paths; each HTML page sets `<base href>` from the path so CSS/JS resolve under `/pkj-webapp/`.
 
 ## Images
 

@@ -42,7 +42,7 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r categories images js assets _site/
-          touch _site/.nojekyll
+          cp .nojekyll _site/ 2>/dev/null || touch _site/.nojekyll
           test -f _site/index.html
 
       - name: Deploy to gh-pages branch

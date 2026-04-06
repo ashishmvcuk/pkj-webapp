@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
+          parts.pop();
+        }
+        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var b = document.createElement("base");
+        b.href = basePath;
+        document.head.appendChild(b);
+      })();
+    </script>
     <title>मोबाइल — Pankaj Electronics भोपाल</title>
     <meta name="description" content="स्मार्टफोन व मोबाइल एक्सेसरीज़ — पंकज इलेक्ट्रॉनिक्स, इतवारा भोपाल।" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,7 +56,18 @@
         <span class="text-slate-800">मोबाइल</span>
       </nav>
       <h1 class="mb-3 text-3xl font-bold" data-reveal>मोबाइल व स्मार्टफोन</h1>
-      <p class="mb-8 max-w-2xl text-slate-600" data-reveal>उदाहरण सूची — स्टॉक व कीमत के लिए दुकान पर पूछताछ करें या कॉल करें।</p>
+      <p class="mb-6 max-w-2xl text-slate-600" data-reveal>उदाहरण सूची — स्टॉक व कीमत के लिए दुकान पर पूछताछ करें या कॉल करें।</p>
+      <figure class="mb-8 overflow-hidden rounded-2xl border border-slate-200 shadow-md" data-reveal>
+        <img
+          src="../images/categories/phone.jpg"
+          alt="स्मार्टफोन — स्टॉक उदाहरण तस्वीर"
+          width="1200"
+          height="675"
+          class="aspect-video w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption class="sr-only">Stock photo for illustration</figcaption>
+      </figure>
       <ul class="grid gap-4 sm:grid-cols-2">
         <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
           <h2 class="font-bold text-slate-900">बजट स्मार्टफोन</h2>

@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
+          parts.pop();
+        }
+        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var b = document.createElement("base");
+        b.href = basePath;
+        document.head.appendChild(b);
+      })();
+    </script>
     <title>Pankaj Electronics — भोपाल | मोबाइल, टीवी, होम अप्लायंस व रिपेयर</title>
     <meta
       name="description"
@@ -215,37 +227,88 @@
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <a
               href="categories/phones.html"
-              class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
               data-reveal
             >
-              <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">मोबाइल</h3>
-              <p class="text-sm text-slate-600">स्मार्टफोन व एक्सेसरीज़</p>
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/phone.jpg"
+                  alt="स्मार्टफोन — उदाहरण तस्वीर"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">मोबाइल</h3>
+                <p class="text-sm text-slate-600">स्मार्टफोन व एक्सेसरीज़</p>
+              </div>
             </a>
             <a
               href="categories/tvs.html"
-              class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
               data-reveal
             >
-              <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">टीवी</h3>
-              <p class="text-sm text-slate-600">LED / Smart TV</p>
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/tv.jpg"
+                  alt="LED टीवी — उदाहरण तस्वीर"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">टीवी</h3>
+                <p class="text-sm text-slate-600">LED / Smart TV</p>
+              </div>
             </a>
             <a
               href="categories/large-appliances.html"
-              class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
               data-reveal
             >
-              <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">बड़े उपकरण</h3>
-              <p class="text-sm text-slate-600">फ्रिज, वॉशिंग मशीन</p>
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/appliances-large.jpg"
+                  alt="रेफ्रिजरेटर व होम अप्लायंस — उदाहरण तस्वीर"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">बड़े उपकरण</h3>
+                <p class="text-sm text-slate-600">फ्रिज, वॉशिंग मशीन</p>
+              </div>
             </a>
             <a
               href="categories/small-appliances.html"
-              class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:border-brand-blue hover:bg-white hover:shadow-md"
               data-reveal
             >
-              <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">छोटे उपकरण</h3>
-              <p class="text-sm text-slate-600">मिक्सर, आयरन व अन्य</p>
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/appliances-small.jpg"
+                  alt="किचन अप्लायंस — उदाहरण तस्वीर"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="mb-1 font-bold text-slate-900 group-hover:text-brand-blue">छोटे उपकरण</h3>
+                <p class="text-sm text-slate-600">मिक्सर, आयरन व अन्य</p>
+              </div>
             </a>
           </div>
+          <p class="mt-4 text-center text-xs text-slate-500" data-reveal>
+            तस्वीरें स्टॉक / उदाहरण हैं — वास्तविक मॉडल दुकान पर उपलब्ध।
+          </p>
           <p class="mt-6" data-reveal>
             <a href="categories/index.html" class="font-semibold text-brand-pink hover:underline">सभी श्रेणियाँ देखें →</a>
           </p>
@@ -332,6 +395,14 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   >नक्शा खोलें</a
+                >
+                <span class="text-slate-300">|</span>
+                <a
+                  class="text-sm font-semibold text-brand-blue hover:underline"
+                  href="https://www.google.com/maps/search/?api=1&query=Shop+36+Pankaj+Electronics+Itwara+Rd+Bhopal+462001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Maps पर फ़ोटो व समीक्षाएँ</a
                 >
               </div>
             </div>

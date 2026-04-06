@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
+          parts.pop();
+        }
+        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var b = document.createElement("base");
+        b.href = basePath;
+        document.head.appendChild(b);
+      })();
+    </script>
     <title>छोटे अप्लायंस — Pankaj Electronics भोपाल</title>
     <meta name="description" content="मिक्सर, आयरन, केतली — पंकज इलेक्ट्रॉनिक्स भोपाल।" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,7 +56,18 @@
         <span class="text-slate-800">छोटे अप्लायंस</span>
       </nav>
       <h1 class="mb-3 text-3xl font-bold" data-reveal>छोटे होम अप्लायंस</h1>
-      <p class="mb-8 max-w-2xl text-slate-600" data-reveal>रोज़मर्रा की सुविधा — वॉरंटी व सहायता स्टोर पर।</p>
+      <p class="mb-6 max-w-2xl text-slate-600" data-reveal>रोज़मर्रा की सुविधा — वॉरंटी व सहायता स्टोर पर।</p>
+      <figure class="mb-8 overflow-hidden rounded-2xl border border-slate-200 shadow-md" data-reveal>
+        <img
+          src="../images/categories/appliances-small.jpg"
+          alt="किचन अप्लायंस — उदाहरण तस्वीर"
+          width="1200"
+          height="675"
+          class="aspect-video w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption class="sr-only">Stock photo for illustration</figcaption>
+      </figure>
       <ul class="grid gap-4 sm:grid-cols-2">
         <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
           <h2 class="font-bold text-slate-900">मिक्सर ग्राइंडर (≈750W)</h2>

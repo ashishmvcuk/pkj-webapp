@@ -39,6 +39,21 @@ After the first successful workflow run, the site URL is shown on that same **Pa
 
 If your default branch is not `main`, edit the `on.push.branches` list in the workflow file.
 
+**GitHub project URL quirk:** Opening `…/pkj-webapp` *without* a trailing slash used to make the browser resolve `assets/…` and `js/…` against the site root (`github.io/assets/…`) instead of under the repo, so CSS/JS 404 and the page looked blank. Each HTML page now sets a `<base href>` from the current path so assets load under `/pkj-webapp/` either way.
+
+**Deploy fails (token / environment):**
+
+1. Repo **Settings → Actions → General** → scroll to **Workflow permissions** → choose **Read and write permissions** → Save. (If this stays “Read repository contents”, the job cannot push to `gh-pages`.)
+2. **Pages** should use **Deploy from a branch → `gh-pages` / (root)** — not the separate “GitHub Actions” source that uses the `github-pages` environment (that flow often 404s until fully enabled).
+3. Push the latest [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) from this repo so the workflow only pushes the `gh-pages` branch (no `deploy-pages` / `github-pages` environment).
+
+## Images
+
+- **Hero:** [`images/hero-banner.png`](images/hero-banner.png) (your shop creative).
+- **Category tiles:** [`images/categories/`](images/categories/) — stock photos ([Unsplash](https://unsplash.com/license)), saved in-repo for fast loads. See [`images/categories/ATTRIBUTION.md`](images/categories/ATTRIBUTION.md).
+
+**Why not “images from Google”?** Google Image Search results are almost always copyrighted; hotlinking or copying them without permission is risky. For **your real shop photos**, upload them to [Google Business Profile](https://business.google.com/) and optionally pull them with the [Places API (Place Photos)](https://developers.google.com/maps/documentation/places/web-service/place-photos) at build time, or drop files into `images/` and link them in HTML.
+
 ## Content
 
 - **Phone:** +91 93930 55583 (update in HTML if it changes.)

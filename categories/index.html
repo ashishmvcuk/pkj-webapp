@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
+          parts.pop();
+        }
+        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var b = document.createElement("base");
+        b.href = basePath;
+        document.head.appendChild(b);
+      })();
+    </script>
     <title>श्रेणियाँ — Pankaj Electronics भोपाल</title>
     <meta name="description" content="मोबाइल, टीवी, बड़े व छोटे होम अप्लायंस — पंकज इलेक्ट्रॉनिक्स, भोपाल।" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,27 +69,47 @@
       <p class="mb-10 max-w-2xl text-slate-600" data-reveal>नीचे दी सूची उदाहरण है; वास्तविक मॉडल व कीमत दुकान पर।</p>
       <ul class="grid gap-4 sm:grid-cols-2">
         <li data-reveal>
-          <a href="phones.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
-            <h2 class="text-xl font-bold text-brand-blue">मोबाइल व स्मार्टफोन</h2>
-            <p class="mt-2 text-sm text-slate-600">Android / 5G — ब्रांड व स्टॉक स्टोर पर।</p>
+          <a href="phones.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/phone.jpg" alt="स्मार्टफोन — उदाहरण" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-brand-blue">मोबाइल व स्मार्टफोन</h2>
+              <p class="mt-2 text-sm text-slate-600">Android / 5G — ब्रांड व स्टॉक स्टोर पर।</p>
+            </div>
           </a>
         </li>
         <li data-reveal>
-          <a href="tvs.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
-            <h2 class="text-xl font-bold text-brand-blue">टीवी व होम एंटरटेनमेंट</h2>
-            <p class="mt-2 text-sm text-slate-600">LED, Smart TV, साउंड।</p>
+          <a href="tvs.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/tv.jpg" alt="LED टीवी — उदाहरण" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-brand-blue">टीवी व होम एंटरटेनमेंट</h2>
+              <p class="mt-2 text-sm text-slate-600">LED, Smart TV, साउंड।</p>
+            </div>
           </a>
         </li>
         <li data-reveal>
-          <a href="large-appliances.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
-            <h2 class="text-xl font-bold text-brand-blue">बड़े होम अप्लायंस</h2>
-            <p class="mt-2 text-sm text-slate-600">रेफ्रिजरेटर, वॉशिंग मशीन।</p>
+          <a href="large-appliances.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/appliances-large.jpg" alt="होम अप्लायंस — उदाहरण" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-brand-blue">बड़े होम अप्लायंस</h2>
+              <p class="mt-2 text-sm text-slate-600">रेफ्रिजरेटर, वॉशिंग मशीन।</p>
+            </div>
           </a>
         </li>
         <li data-reveal>
-          <a href="small-appliances.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
-            <h2 class="text-xl font-bold text-brand-blue">छोटे अप्लायंस</h2>
-            <p class="mt-2 text-sm text-slate-600">मिक्सर ग्राइंडर, आयरन, केतली।</p>
+          <a href="small-appliances.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/appliances-small.jpg" alt="किचन अप्लायंस — उदाहरण" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-brand-blue">छोटे अप्लायंस</h2>
+              <p class="mt-2 text-sm text-slate-600">मिक्सर ग्राइंडर, आयरन, केतली।</p>
+            </div>
           </a>
         </li>
       </ul>

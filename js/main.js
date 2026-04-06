@@ -59,20 +59,23 @@
     var root = document.querySelector("[data-gallery-carousel]");
     if (!root) return;
 
+    var viewport = root.querySelector("[data-carousel-viewport]");
     var track = root.querySelector("[data-carousel-track]");
     var slides = root.querySelectorAll("[data-carousel-slide]");
     var prevBtn = root.querySelector("[data-carousel-prev]");
     var nextBtn = root.querySelector("[data-carousel-next]");
     var dotsWrap = root.querySelector("[data-carousel-dots]");
     var announcer = root.querySelector("[data-carousel-announcer]");
-    if (!track || !slides.length || !prevBtn || !nextBtn) return;
+    if (!viewport || !track || !slides.length || !prevBtn || !nextBtn) return;
 
     var index = 0;
     var timer = null;
-    var reduced =
-      typeof window.matchMedia === "function" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var focusRestartTimer = null;
     var intervalMs = 4500;
+
+    function slideWidth() {
+      return viewport.offsetWidth || 0;
+    }
 
     function announce() {
       if (!announcer) return;
@@ -80,9 +83,19 @@
         "Slide " + String(index + 1) + " of " + String(slides.length);
     }
 
+    function applyLayout() {
+      var w = slideWidth();
+      if (w <= 0) return;
+      slides.forEach(function (slide) {
+        slide.style.width = w + "px";
+        slide.style.flexShrink = "0";
+      });
+      track.style.transform = "translateX(-" + String(index * w) + "px)";
+    }
+
     function goTo(i) {
       index = (i + slides.length) % slides.length;
-      track.style.transform = "translateX(-" + String(index * 100) + "%)";
+      applyLayout();
       if (dotsWrap) {
         dotsWrap.querySelectorAll("[data-carousel-dot]").forEach(function (dot, di) {
           var on = di === index;
@@ -115,7 +128,7 @@
     }
 
     function startAuto() {
-      if (reduced || timer !== null) return;
+      if (timer !== null) return;
       timer = window.setInterval(next, intervalMs);
     }
 
@@ -158,13 +171,37 @@
 
     root.addEventListener("mouseenter", stopAuto);
     root.addEventListener("mouseleave", startAuto);
-    root.addEventListener("focusin", stopAuto);
-    root.addEventListener("focusout", function (ev) {
-      if (!root.contains(ev.relatedTarget)) startAuto();
+
+    root.addEventListener("focusin", function () {
+      if (focusRestartTimer) {
+        window.clearTimeout(focusRestartTimer);
+        focusRestartTimer = null;
+      }
+      stopAuto();
+    });
+    root.addEventListener("focusout", function () {
+      if (focusRestartTimer) window.clearTimeout(focusRestartTimer);
+      focusRestartTimer = window.setTimeout(function () {
+        focusRestartTimer = null;
+        if (!root.contains(document.activeElement)) startAuto();
+      }, 80);
     });
 
     goTo(0);
-    startAuto();
+
+    if (typeof ResizeObserver !== "undefined") {
+      var ro = new ResizeObserver(function () {
+        applyLayout();
+      });
+      ro.observe(viewport);
+    } else {
+      window.addEventListener("resize", applyLayout);
+    }
+
+    window.setTimeout(function () {
+      applyLayout();
+      startAuto();
+    }, 0);
 
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) stopAuto();

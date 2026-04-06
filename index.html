@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      /* Set <base> for nav links, then load CSS from site root (first URL segment).
+         A static <link href="assets/..."> can be fetched by the preload scanner BEFORE
+         this runs, resolving to the wrong path on GitHub Pages project sites. */
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
+          parts.pop();
+        }
+        var dirBase = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var siteRoot = parts.length ? "/" + parts[0] + "/" : "/";
+        var head = document.head;
+        var b = document.createElement("base");
+        b.href = dirBase;
+        head.appendChild(b);
+        var l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = siteRoot + "assets/css/styles.css";
+        head.appendChild(l);
+      })();
+    </script>
+    <title>Pankaj Electronics — Bhopal | Phones, TVs, Appliances & Repair</title>
+    <meta
+      name="description"
+      content="Your one-stop electronics store in Bhopal: mobiles, LED TVs, home appliances, easy EMI, and expert repair. Shop No. 36, Itwara Rd, Sarafa Chowk, Peer Gate."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Pankaj Electronics",
+        "telephone": "+91-93022-04320",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Shop No. 36, Itwara Rd, Sarafa chowk, Itwara, Ibrahimpura, Peer Gate Area",
+          "addressLocality": "Bhopal",
+          "addressRegion": "Madhya Pradesh",
+          "postalCode": "462001",
+          "addressCountry": "IN"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "12:00",
+          "closes": "21:00"
+        },
+        "sameAs": [
+          "https://www.instagram.com/pankaj_electronics_bpl/",
+          "https://www.youtube.com/@PankajElectronicsbpl",
+          "https://www.indiamart.com/pankajelectronics-bhopal/"
+        ],
+        "description": "Electronics retail and repair in Bhopal. Phones, TVs, appliances, EMI options, reviews and tips on YouTube.",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.6",
+          "reviewCount": "267",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 font-sans text-slate-800 antialiased">
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-md">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5">
+        <a
+          href="index.html"
+          class="group flex min-w-0 flex-shrink-0 flex-col items-start gap-0.5 py-0.5"
+          aria-label="Pankaj Electronics — Home"
+        >
+          <span class="logo-skew-top">
+            <span class="logo-skew-text font-display">Pankaj</span>
+          </span>
+          <span class="logo-skew-bottom">
+            <span class="logo-skew-text font-display">Electronics</span>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-7 md:flex" aria-label="Main">
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="index.html#services">Services</a>
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="categories/index.html">Shop</a>
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="index.html#gallery">Gallery</a>
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="index.html#youtube">YouTube</a>
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="index.html#indiamart">IndiaMART</a>
+          <a class="text-sm font-medium text-slate-600 transition hover:text-brand-blue" href="index.html#contact">Contact</a>
+          <a
+            class="font-display rounded-full bg-brand-pink px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brand-pink/25 transition hover:brightness-110"
+            href="tel:+919302204320"
+            >Call us</a
+          >
+        </nav>
+
+        <button
+          type="button"
+          class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2.5 md:hidden"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open menu"
+        >
+          <svg class="h-6 w-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="mobile-nav"
+        class="hidden border-t border-slate-100 bg-white px-4 py-4 md:hidden"
+        data-nav-panel
+        aria-hidden="true"
+      >
+        <div class="flex flex-col gap-1">
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="index.html#services">Services</a>
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="categories/index.html">Shop</a>
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="index.html#gallery">Gallery</a>
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="index.html#youtube">YouTube</a>
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="index.html#indiamart">IndiaMART</a>
+          <a class="rounded-lg py-3 font-medium text-slate-800" href="index.html#contact">Contact</a>
+          <a class="mt-2 rounded-xl bg-brand-blue py-3 text-center font-semibold text-white" href="tel:+919302204320">93022 04320</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="relative overflow-hidden border-b border-slate-200/80">
+        <div
+          class="pointer-events-none absolute -right-24 top-0 h-[28rem] w-[28rem] rounded-full bg-brand-blue/[0.12] blur-3xl md:right-0"
+        ></div>
+        <div
+          class="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-brand-pink/[0.10] blur-3xl"
+        ></div>
+        <div class="relative mx-auto grid max-w-6xl gap-12 px-4 py-14 md:grid-cols-2 md:items-center md:py-20">
+          <div data-reveal>
+            <p class="font-display mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-pink">Bhopal · Peer Gate · Ibrahimpura</p>
+            <h1 class="font-display mb-4 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-[3.25rem]">
+              Your one-stop destination for <span class="text-brand-blue">electronics</span>
+            </h1>
+            <p class="mb-3 text-lg font-medium text-slate-700 md:text-xl">
+              Phones, TVs, kitchen & home appliances — top brands, fair prices, easy EMI.
+            </p>
+            <p class="mb-8 max-w-lg text-base leading-relaxed text-slate-600">
+              From the latest gadgets to everyday appliances, we help you choose right. Visit our store or follow us for reviews, unboxings, and expert tips.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                class="font-display inline-flex items-center justify-center rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition hover:brightness-110"
+                href="tel:+919302204320"
+                >Call now</a
+              >
+              <a
+                class="font-display inline-flex items-center justify-center rounded-full border-2 border-brand-yellow bg-white px-6 py-3 text-sm font-semibold text-brand-blue transition hover:bg-amber-50/80"
+                href="https://www.google.com/maps/search/?api=1&query=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Peer+Gate+Bhopal+462001"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Directions</a
+              >
+              <a
+                class="font-display inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-red-300 hover:text-red-600"
+                href="https://www.youtube.com/@PankajElectronicsbpl"
+                target="_blank"
+                rel="noopener noreferrer"
+                >YouTube</a
+              >
+              <a
+                class="font-display inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-brand-pink hover:text-brand-pink"
+                href="https://www.instagram.com/pankaj_electronics_bpl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram</a
+              >
+            </div>
+            <p class="mt-4 text-sm font-medium text-slate-600">Serving customers in Bhopal for <span class="text-brand-blue">9+ years</span> (per public directory listings).</p>
+            <p class="mt-3 text-sm font-bold tracking-wide text-brand-blue" data-reveal>Trusted brand in Bhopal</p>
+            <p class="mt-8 flex flex-wrap items-center gap-2 text-sm text-slate-500">
+              <span class="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 font-semibold text-amber-800">4.6★</span>
+              <span class="hidden text-slate-300 sm:inline">·</span>
+              <a
+                href="https://www.instagram.com/pankaj_electronics_bpl/"
+                class="inline-flex items-center gap-1 rounded-full bg-pink-50 px-3 py-1 font-semibold text-pink-900 transition hover:bg-pink-100"
+                target="_blank"
+                rel="noopener noreferrer"
+                >49K+ followers</a
+              >
+              <span class="hidden text-slate-300 sm:inline">·</span>
+              <span class="font-medium text-slate-700">300+ reviews</span>
+              <span class="hidden text-slate-300 sm:inline">·</span>
+              <a href="#reviews" class="font-medium text-brand-blue hover:underline">Read reviews</a>
+            </p>
+            <p class="mt-2 text-xs text-slate-400">Follower count is from Instagram; Google Maps shows the live review total in the reviews section below.</p>
+          </div>
+          <div data-reveal class="relative">
+            <div
+              class="hero-flyer overflow-hidden rounded-3xl border border-slate-200/90 p-5 shadow-2xl shadow-slate-400/25 ring-1 ring-white"
+              role="img"
+              aria-label="Pankaj Electronics promotional banner: phones, TVs, appliances, easy EMI partners Bajaj, HDFC, Home Credit, IDFC, TVS Credit"
+            >
+              <div class="space-y-3">
+                <div class="relative z-10">
+                  <div
+                    class="origin-left -skew-x-6 rounded-sm border-2 border-brand-yellow bg-brand-blue py-3 pl-6 pr-10 shadow-md sm:py-4 sm:pl-8 sm:pr-12"
+                  >
+                    <span class="skew-x-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+                      >Pankaj</span
+                    >
+                  </div>
+                </div>
+                <div class="relative z-0 -mt-2 ml-4 sm:ml-6">
+                  <div
+                    class="origin-left -skew-x-6 rounded-sm bg-brand-pink py-2.5 pl-6 pr-10 shadow-md sm:py-3 sm:pl-8 sm:pr-12"
+                  >
+                    <span class="skew-x-6 font-display text-2xl font-bold text-white sm:text-3xl"
+                      >Electronics</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-slate-200/80 bg-white/90 py-6 shadow-inner"
+              >
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <span class="text-3xl" aria-hidden="true">📱</span>
+                  <span class="text-xs font-medium">Phones</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <span class="text-3xl" aria-hidden="true">📺</span>
+                  <span class="text-xs font-medium">TVs</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <span class="text-3xl" aria-hidden="true">❄️</span>
+                  <span class="text-xs font-medium">Cooling</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 text-slate-600">
+                  <span class="text-3xl" aria-hidden="true">🌀</span>
+                  <span class="text-xs font-medium">Washing machines</span>
+                </div>
+              </div>
+
+              <p class="mt-4 text-center text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                Finance &amp; EMI partners
+              </p>
+              <div class="mt-2 flex flex-wrap justify-center gap-2">
+                <span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700 shadow-sm sm:text-xs"
+                  >Bajaj Finserv</span
+                >
+                <span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700 shadow-sm sm:text-xs"
+                  >HDFC Bank</span
+                >
+                <span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700 shadow-sm sm:text-xs"
+                  >Home Credit</span
+                >
+                <span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700 shadow-sm sm:text-xs"
+                  >IDFC FIRST Bank</span
+                >
+                <span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[10px] font-bold text-slate-700 shadow-sm sm:text-xs"
+                  >TVS Credit</span
+                >
+              </div>
+
+              <div
+                class="mt-5 rounded-lg bg-brand-red px-3 py-3 text-center text-sm font-semibold leading-snug text-white shadow-md sm:text-base"
+              >
+                All electronic appliances available on easy installments.
+              </div>
+
+              <div class="mt-4 flex items-center justify-center gap-2 text-center">
+                <span class="text-brand-blue" aria-hidden="true">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </span>
+                <a
+                  href="tel:+919302204320"
+                  class="font-display text-lg font-bold text-brand-blue hover:underline sm:text-xl"
+                  >+91 93022 04320</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value props -->
+      <section class="border-b border-slate-200 bg-white py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="font-display mb-3 text-center text-3xl font-bold tracking-tight text-slate-900 md:text-4xl" data-reveal>
+            Why shoppers choose us
+          </h2>
+          <p class="mx-auto mb-12 max-w-2xl text-center text-slate-600" data-reveal>
+            Whether you are upgrading entertainment, kitting out your kitchen, or fixing a device — we make your tech journey simple.
+          </p>
+          <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+            <li class="rounded-2xl border border-slate-100 bg-slate-50/80 p-6 text-center shadow-sm">
+              <span class="font-display text-2xl font-bold text-brand-blue">01</span>
+              <h3 class="mt-3 font-display font-semibold text-slate-900">Wide range</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Latest gadgets to essential appliances from trusted brands.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-100 bg-slate-50/80 p-6 text-center shadow-sm">
+              <span class="font-display text-2xl font-bold text-brand-pink">02</span>
+              <h3 class="mt-3 font-display font-semibold text-slate-900">Expert help</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Honest advice, after-sales support, and repair when you need it.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-100 bg-slate-50/80 p-6 text-center shadow-sm">
+              <span class="font-display text-2xl font-bold text-amber-500">03</span>
+              <h3 class="mt-3 font-display font-semibold text-slate-900">Easy EMI</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Flexible finance options via leading partners (approval as per norms).</p>
+            </li>
+            <li class="rounded-2xl border border-slate-100 bg-slate-50/80 p-6 text-center shadow-sm">
+              <span class="font-display text-2xl font-bold text-emerald-600">04</span>
+              <h3 class="mt-3 font-display font-semibold text-slate-900">On YouTube</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">Reviews, unboxings, how-tos, and what is new in electronics.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="services" class="border-b border-slate-200 bg-slate-50 py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="font-display mb-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl" data-reveal>What we do</h2>
+          <p class="mb-12 max-w-2xl text-lg text-slate-600" data-reveal>
+            Retail, repair, and payment plans — everything under one roof near Sarafa Chowk, Itwara.
+          </p>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article
+              class="group rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg"
+              data-reveal
+            >
+              <div class="mb-4 inline-flex rounded-xl bg-brand-blue/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-blue">Retail</div>
+              <h3 class="font-display mb-2 text-xl font-bold text-slate-900">New products</h3>
+              <p class="text-sm leading-relaxed text-slate-600">
+                Smartphones, smart TVs, refrigerators, washing machines, mixers, and more — walk in to compare models and prices.
+              </p>
+            </article>
+            <article
+              class="group rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-brand-pink/30 hover:shadow-lg"
+              data-reveal
+            >
+              <div class="mb-4 inline-flex rounded-xl bg-brand-pink/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-pink">Repair</div>
+              <h3 class="font-display mb-2 text-xl font-bold text-slate-900">Service & repair</h3>
+              <p class="text-sm leading-relaxed text-slate-600">
+                Get faults diagnosed and fixed by experienced staff. Call ahead or bring the device to the shop.
+              </p>
+            </article>
+            <article
+              class="group rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg sm:col-span-2 lg:col-span-1"
+              data-reveal
+            >
+              <div class="mb-4 inline-flex rounded-xl bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-amber-900">EMI</div>
+              <h3 class="font-display mb-2 text-xl font-bold text-slate-900">Easy installments</h3>
+              <p class="text-sm leading-relaxed text-slate-600">
+                Spread the cost with partner finance schemes where you qualify — terms apply per lender.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- YouTube -->
+      <section id="youtube" class="relative overflow-hidden border-b border-slate-800 bg-slate-900 py-16 text-white md:py-20">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-900/40 via-transparent to-transparent"></div>
+        <div class="relative mx-auto max-w-6xl px-4">
+          <div class="grid items-center gap-12 lg:grid-cols-2">
+            <div data-reveal>
+              <p class="font-display mb-2 text-sm font-semibold uppercase tracking-widest text-red-400">On YouTube</p>
+              <h2 class="font-display mb-6 text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+                Reviews, unboxings &amp; tips from <span class="text-red-400">Pankaj Electronics</span>
+              </h2>
+              <p class="mb-6 text-lg leading-relaxed text-slate-300">
+                Your one-stop destination for all things electronic. From the latest gadgets to essential appliances, we cover top brands so you find exactly what you need — home entertainment, kitchen upgrades, or cutting-edge tech.
+              </p>
+              <p class="mb-6 font-medium text-slate-200">Stay tuned for:</p>
+              <ul class="mb-8 space-y-3 text-slate-300">
+                <li class="flex gap-3">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400"></span>
+                  In-depth product reviews
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400"></span>
+                  Hands-on unboxings
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400"></span>
+                  How-tos and troubleshooting
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400"></span>
+                  Latest trends in electronics
+                </li>
+              </ul>
+              <a
+                href="https://www.youtube.com/@PankajElectronicsbpl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-display inline-flex items-center gap-2 rounded-full bg-red-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-900/40 transition hover:bg-red-500"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Subscribe on YouTube
+              </a>
+            </div>
+            <div data-reveal class="relative">
+              <a
+                href="https://www.youtube.com/@PankajElectronicsbpl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group block overflow-hidden rounded-3xl border border-slate-700 bg-slate-800/50 shadow-2xl ring-1 ring-white/10 transition hover:border-red-500/50"
+              >
+                <div class="flex aspect-video flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center">
+                  <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white shadow-xl transition group-hover:scale-105">
+                    <svg class="ml-1 h-10 w-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  </div>
+                  <p class="font-display text-xl font-semibold text-white">@PankajElectronicsbpl</p>
+                  <p class="max-w-sm text-sm text-slate-400">Open our channel for the newest videos — tap to watch on YouTube.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="border-b border-slate-200 bg-slate-50 py-16" aria-labelledby="gallery-heading">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 id="gallery-heading" class="font-display mb-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl" data-reveal>
+            Inside our store
+          </h2>
+          <p class="mb-10 max-w-2xl text-slate-600" data-reveal>
+            Real photos from our showroom in Bhopal — fridges, TVs, washing machines, speakers, and more. Stock changes daily; visit us to see what&apos;s in today.
+          </p>
+          <p class="mb-6 max-w-2xl text-sm text-slate-500" data-reveal>
+            Store photos use a wide carousel so details are easy to see — images keep their shape (no squashing). Use the arrows or dots; slides advance automatically.
+          </p>
+
+          <div
+            class="mx-auto w-full max-w-xl sm:max-w-2xl md:max-w-4xl lg:max-w-5xl"
+            data-gallery-carousel
+            data-reveal
+            role="region"
+            aria-roledescription="carousel"
+            aria-labelledby="gallery-heading"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm ring-1 ring-slate-100"
+              data-carousel-viewport
+            >
+              <div
+                class="flex h-64 w-full transition-transform duration-500 ease-out motion-reduce:transition-none sm:h-80 md:h-96 lg:h-[28rem]"
+                data-carousel-track
+                style="transform: translateX(0px)"
+              >
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/refrigerators-floral-display.png"
+                    alt="Colourful single-door refrigerators and microwave on display at Pankaj Electronics, Bhopal"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/refrigerators-double-door-row.png"
+                    alt="Silver and maroon double-door refrigerators with decorative bows at Pankaj Electronics"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/tvs-speakers-showroom.png"
+                    alt="Wall-mounted TVs and tower speakers in the electronics showroom"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/showroom-aisle-fridges-coolers.png"
+                    alt="Store aisle lined with refrigerators and air coolers"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/refrigerators-balloons-showroom.png"
+                    alt="Refrigerator display with microwaves and festive balloons in the ceiling"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/tvs-washing-machines-display.png"
+                    alt="Rows of televisions and top-load washing machines on display"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/speakers-tower-lineup.png"
+                    alt="Tower speakers and audio systems lined up in the shop"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/washing-machines-showroom.png"
+                    alt="Colourful semi-automatic washing machines on the showroom floor"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/tv-wall-smart-display.png"
+                    alt="Wall display of smart TVs with branded boxes and speakers below"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure data-carousel-slide class="flex min-w-full shrink-0 basis-full flex-col justify-center px-3 py-3 sm:px-5 sm:py-4">
+                  <img
+                    src="images/gallery/refrigerators-coolers-showroom.png"
+                    alt="Refrigerators and air coolers in the Peer Gate area showroom"
+                    width="600"
+                    height="800"
+                    class="mx-auto max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+              <p class="sr-only" aria-live="polite" data-carousel-announcer>Slide 1 of 10</p>
+            </div>
+
+            <div class="mt-3 flex items-center justify-center gap-3">
+              <button
+                type="button"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-brand-blue hover:text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/40"
+                data-carousel-prev
+                aria-label="Previous photo"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="flex flex-wrap justify-center gap-1.5" data-carousel-dots></div>
+              <button
+                type="button"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-brand-blue hover:text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/40"
+                data-carousel-next
+                aria-label="Next photo"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-slate-200 bg-white py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 class="font-display mb-3 text-3xl font-bold tracking-tight md:text-4xl" data-reveal>Shop by category</h2>
+          <p class="mb-10 max-w-2xl text-slate-600" data-reveal>
+            Illustrative photos — stock and models available in store. Ask us for today&apos;s best deals.
+          </p>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <a
+              href="categories/phones.html"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:bg-white hover:shadow-xl"
+              data-reveal
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/phone.jpg"
+                  alt="Smartphones — sample photo"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-bold text-slate-900 group-hover:text-brand-blue">Mobile phones</h3>
+                <p class="mt-1 text-sm text-slate-600">Smartphones &amp; accessories</p>
+              </div>
+            </a>
+            <a
+              href="categories/tvs.html"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:bg-white hover:shadow-xl"
+              data-reveal
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/tv.jpg"
+                  alt="LED TV — sample photo"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-bold text-slate-900 group-hover:text-brand-blue">Televisions</h3>
+                <p class="mt-1 text-sm text-slate-600">LED &amp; smart TVs</p>
+              </div>
+            </a>
+            <a
+              href="categories/large-appliances.html"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:bg-white hover:shadow-xl"
+              data-reveal
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/appliances-large.jpg"
+                  alt="Large appliances — sample photo"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-bold text-slate-900 group-hover:text-brand-blue">Large appliances</h3>
+                <p class="mt-1 text-sm text-slate-600">Fridges, washing machines</p>
+              </div>
+            </a>
+            <a
+              href="categories/small-appliances.html"
+              class="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-blue/40 hover:bg-white hover:shadow-xl"
+              data-reveal
+            >
+              <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                <img
+                  src="images/categories/appliances-small.jpg"
+                  alt="Small appliances — sample photo"
+                  width="800"
+                  height="600"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-display text-lg font-bold text-slate-900 group-hover:text-brand-blue">Small appliances</h3>
+                <p class="mt-1 text-sm text-slate-600">Mixers, irons &amp; more</p>
+              </div>
+            </a>
+          </div>
+          <p class="mt-8" data-reveal>
+            <a href="categories/index.html" class="font-display font-semibold text-brand-pink hover:underline">View all categories →</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="border-b border-slate-200 bg-slate-50 py-14" aria-labelledby="partners-heading">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 id="partners-heading" class="font-display mb-3 text-center text-2xl font-bold md:text-3xl" data-reveal>Finance partners</h2>
+          <p class="mx-auto mb-10 max-w-2xl text-center text-sm text-slate-600" data-reveal>
+            EMI / loan options through select partners — approval and terms are set by each lender.
+          </p>
+          <ul class="flex flex-wrap items-center justify-center gap-3 md:gap-4" data-reveal>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">Bajaj Finserv</li>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">HDB Financial Services</li>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">Home Credit</li>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">IDFC FIRST Bank</li>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">HDFC Bank</li>
+            <li class="rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 shadow-sm">TVS Credit</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="reviews" class="border-b border-slate-200 bg-white py-14" aria-labelledby="reviews-heading">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 id="reviews-heading" class="font-display mb-3 text-center text-3xl font-bold tracking-tight md:text-4xl" data-reveal>
+            Reviews &amp; trust
+          </h2>
+          <p class="mx-auto mb-8 max-w-2xl text-center text-sm text-slate-600" data-reveal>
+            <span class="font-semibold text-slate-800">Trusted brand in Bhopal</span>
+            — 49K+ Instagram followers, 300+ reviews across Google Maps, IndiaMART, and more. Live rating and snippets load from Google below.
+          </p>
+          <div id="reviews-root" class="min-h-[120px]" data-reveal aria-live="polite"></div>
+          <noscript>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-sm">
+              <p class="font-display text-4xl font-bold text-amber-600">4.6</p>
+              <p class="mt-1 text-slate-600">267+ reviews on Google Maps (totals update when the page loads data).</p>
+              <p class="mt-2 text-sm text-slate-500">300+ reviews across channels including IndiaMART — see live numbers in the reviews block with JavaScript enabled.</p>
+              <p class="mt-4 text-sm text-slate-500">Reviews aren&apos;t verified by Google.</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Bhopal+462001"
+                class="font-display mt-6 inline-flex rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white"
+                >All reviews on Google</a
+              >
+            </div>
+          </noscript>
+        </div>
+      </section>
+
+      <section id="indiamart" class="border-b border-slate-200 bg-white py-16" aria-labelledby="indiamart-heading">
+        <div class="mx-auto max-w-6xl px-4">
+          <h2 id="indiamart-heading" class="font-display mb-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl" data-reveal>
+            IndiaMART catalogue
+          </h2>
+          <p class="mb-4 max-w-3xl text-slate-600" data-reveal>
+            Summary from the public
+            <a
+              href="https://www.indiamart.com/pankajelectronics-bhopal/"
+              class="font-medium text-amber-700 underline decoration-amber-700/40 underline-offset-2 hover:text-amber-800"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Pankaj Electronics — Bhopal</a
+            >
+            listing on IndiaMART (business directory). Use it to browse sample product lines or send enquiries; for the fastest local help, call or visit the shop.
+          </p>
+          <div
+            class="mb-8 rounded-2xl border border-amber-200/80 bg-amber-50/60 p-5 text-sm leading-relaxed text-amber-950"
+            data-reveal
+          >
+            <p class="font-semibold text-amber-900">Privacy on this site</p>
+            <p class="mt-2">
+              We intentionally <strong>do not</strong> publish sensitive directory fields here — for example
+              <strong>GST number</strong>, <strong>proprietor or legal signatory names</strong>, <strong>turnover bands</strong>,
+              <strong>GST registration dates</strong>, or <strong>email</strong> copied from third-party listings. For invoices,
+              tax details, or formal quotes, ask <strong>in person at the store</strong> or use the contact flow on IndiaMART.
+            </p>
+          </div>
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500" data-reveal>Product lines (directory)</p>
+          <ul class="mb-10 flex flex-wrap gap-2" data-reveal>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Single-door refrigerators</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Commercial refrigerators</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Fans</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Garment steamers</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Woofer / home audio</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">LED TVs</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Window ACs</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Semi-automatic washing machines</li>
+            <li class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-800">Microwave ovens</li>
+          </ul>
+          <p class="text-xs text-slate-500" data-reveal>
+            Brand examples on IndiaMART include Kelvinator, LG, Tata, Haier, Micromax, and others — availability in store changes; always confirm current stock.
+          </p>
+          <div class="mt-8" data-reveal>
+            <a
+              href="https://www.indiamart.com/pankajelectronics-bhopal/"
+              class="font-display inline-flex items-center gap-2 rounded-full bg-amber-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-amber-900/20 transition hover:bg-amber-500"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open IndiaMART storefront
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-gradient-to-b from-slate-50 to-white py-16">
+        <div class="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2">
+          <div data-reveal>
+            <h2 class="font-display mb-6 text-3xl font-bold tracking-tight text-slate-900">Visit us</h2>
+            <div class="space-y-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Address</h3>
+                <p class="mt-2 leading-relaxed text-slate-800">
+                  No. 36, Pankaj Electronics, Itwara Rd, Sarafa chowk, Itwara, Ibrahimpura, Peer Gate Area, Bhopal, Madhya Pradesh 462001, India
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Hours</h3>
+                <p class="mt-2 font-medium text-slate-800">Opens from 12:00 noon — confirm closing time at the shop or by phone.</p>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Phone</h3>
+                <a class="font-display mt-2 block text-xl font-semibold text-brand-blue hover:underline" href="tel:+919302204320">+91 93022 04320</a>
+              </div>
+              <div class="flex flex-wrap gap-x-4 gap-y-2 border-t border-slate-100 pt-6 text-sm font-semibold">
+                <a class="text-brand-pink hover:underline" href="https://www.instagram.com/pankaj_electronics_bpl/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <span class="text-slate-300">·</span>
+                <a class="text-red-600 hover:underline" href="https://www.youtube.com/@PankajElectronicsbpl" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <span class="text-slate-300">·</span>
+                <a
+                  class="text-brand-blue hover:underline"
+                  href="https://www.google.com/maps/search/?api=1&query=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Bhopal+462001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Maps &amp; photos</a
+                >
+                <span class="text-slate-300">·</span>
+                <a
+                  class="text-amber-700 hover:underline"
+                  href="https://www.indiamart.com/pankajelectronics-bhopal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >IndiaMART</a
+                >
+              </div>
+            </div>
+          </div>
+          <div data-reveal class="min-h-[300px] overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+            <iframe
+              title="Pankaj Electronics on the map"
+              class="h-full min-h-[320px] w-full"
+              src="https://maps.google.com/maps?q=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Bhopal+462001&hl=en&z=16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+      <div
+        id="footer-marquee-mount"
+        class="border-b border-slate-800 bg-slate-950"
+        aria-label="Scrolling customer trust and review highlights"
+      ></div>
+      <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="font-display text-lg font-bold text-white">Pankaj Electronics</p>
+          <p class="mt-1 text-sm text-slate-400">Retail · Repair · EMI · Bhopal</p>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-500">
+            Join our community of tech enthusiasts and savvy shoppers — online and at the store.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm font-medium">
+          <a href="https://www.youtube.com/@PankajElectronicsbpl" class="text-white hover:text-red-400" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/pankaj_electronics_bpl/" class="hover:text-brand-pink" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.indiamart.com/pankajelectronics-bhopal/" class="text-amber-400 hover:text-amber-300" target="_blank" rel="noopener noreferrer">IndiaMART</a>
+          <a href="tel:+919302204320" class="hover:text-white">Call</a>
+          <a href="index.html#contact" class="hover:text-white">Contact</a>
+        </div>
+        <p class="text-sm text-slate-500">© <span data-year></span> Pankaj Electronics</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/reviews-widget.js" defer></script>
+    <script src="js/footer-marquee.js" defer></script>
+    <script src="js/whatsapp-float.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) parts.pop();
+        var dirBase = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var siteRoot = parts.length ? "/" + parts[0] + "/" : "/";
+        var head = document.head;
+        var b = document.createElement("base");
+        b.href = dirBase;
+        head.appendChild(b);
+        var l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = siteRoot + "assets/css/styles.css";
+        head.appendChild(l);
+      })();
+    </script>
+    <title>Shop categories — Pankaj Electronics, Bhopal</title>
+    <meta name="description" content="Mobiles, TVs, large and small home appliances at Pankaj Electronics, Itwara, Bhopal." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-slate-50 font-sans text-slate-800 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5">
+        <a
+          href="../index.html"
+          class="group flex min-w-0 flex-shrink-0 flex-col items-start gap-0.5 py-0.5"
+          aria-label="Pankaj Electronics — Home"
+        >
+          <span class="logo-skew-top"><span class="logo-skew-text font-display">Pankaj</span></span>
+          <span class="logo-skew-bottom"><span class="logo-skew-text font-display">Electronics</span></span>
+        </a>
+        <nav class="hidden items-center gap-6 md:flex">
+          <a class="text-sm font-medium text-slate-600 hover:text-brand-blue" href="../index.html#services">Services</a>
+          <a class="text-sm font-medium text-brand-blue" href="index.html">Shop</a>
+          <a class="text-sm font-medium text-slate-600 hover:text-brand-blue" href="../index.html#contact">Contact</a>
+          <a class="font-display rounded-full bg-brand-pink px-4 py-2 text-sm font-semibold text-white" href="tel:+919302204320">Call</a>
+        </nav>
+        <button type="button" class="rounded-xl border border-slate-200 p-2 md:hidden" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden border-t bg-white px-4 py-4 md:hidden" data-nav-panel aria-hidden="true">
+        <div class="flex flex-col gap-2">
+          <a class="py-2 font-medium" href="../index.html">Home</a>
+          <a class="py-2 font-medium" href="../index.html#youtube">YouTube</a>
+          <a class="rounded-xl bg-brand-blue py-3 text-center font-semibold text-white" href="tel:+919302204320">93022 04320</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="mb-6 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="../index.html" class="hover:text-brand-blue">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-800">Categories</span>
+      </nav>
+      <h1 class="font-display mb-3 text-3xl font-bold tracking-tight md:text-4xl" data-reveal>Product categories</h1>
+      <p class="mb-10 max-w-2xl text-slate-600" data-reveal>Sample listings — real stock and prices at the shop.</p>
+      <ul class="grid gap-5 sm:grid-cols-2">
+        <li data-reveal>
+          <a href="phones.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue/40 hover:shadow-lg">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/phone.jpg" alt="Smartphones" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="font-display text-xl font-bold text-brand-blue">Mobile phones</h2>
+              <p class="mt-2 text-sm text-slate-600">Android / 5G — brands as per store stock.</p>
+            </div>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="tvs.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue/40 hover:shadow-lg">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/tv.jpg" alt="Televisions" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="font-display text-xl font-bold text-brand-blue">TV &amp; entertainment</h2>
+              <p class="mt-2 text-sm text-slate-600">LED, smart TV, audio.</p>
+            </div>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="large-appliances.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue/40 hover:shadow-lg">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/appliances-large.jpg" alt="Large appliances" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="font-display text-xl font-bold text-brand-blue">Large appliances</h2>
+              <p class="mt-2 text-sm text-slate-600">Refrigerators, washing machines.</p>
+            </div>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="small-appliances.html" class="block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-blue/40 hover:shadow-lg">
+            <div class="aspect-[16/9] overflow-hidden bg-slate-200">
+              <img src="../images/categories/appliances-small.jpg" alt="Small appliances" class="h-full w-full object-cover" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <h2 class="font-display text-xl font-bold text-brand-blue">Small appliances</h2>
+              <p class="mt-2 text-sm text-slate-600">Mixer grinders, irons, kettles.</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-8">
+      <div class="mx-auto max-w-6xl px-4 text-center text-sm text-slate-500">
+        <a href="../index.html" class="font-semibold text-brand-pink hover:underline">← Home</a>
+        <span class="mx-2">·</span>
+        © <span data-year></span> Pankaj Electronics
+      </div>
+    </footer>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/whatsapp-float.js" defer></script>
+  </body>
+</html>

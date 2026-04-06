@@ -23,6 +23,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    /* Keeps the slanted bar’s left edge on the layout column (default center skew shifts it left). */
+    transform-origin: left center;
     transform: skewX(-10deg);
     border: 2px solid #f5c518;
     background: linear-gradient(to bottom right, #0071bc, #005a94);
@@ -40,6 +42,7 @@
     align-items: center;
     justify-content: center;
     align-self: flex-start;
+    transform-origin: left center;
     transform: skewX(-10deg);
     background-color: #e91e63;
     padding: 0.25rem 0.75rem;

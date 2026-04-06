@@ -13,6 +13,19 @@
     );
     background-size: 18px 18px;
   }
+
+  /* Staggered parallelogram wordmark — matches brand (blue “Pankaj”, pink “Electronics”) */
+  .logo-skew-top {
+    @apply inline-flex -skew-x-[10deg] border-2 border-brand-yellow bg-gradient-to-br from-brand-blue to-[#005a94] px-2.5 py-1 shadow-sm transition group-hover:brightness-110 sm:px-3 sm:py-1.5;
+  }
+
+  .logo-skew-bottom {
+    @apply -ml-2 inline-flex -skew-x-[10deg] self-start bg-brand-pink px-2.5 py-1 shadow-md shadow-brand-pink/20 transition group-hover:brightness-110 sm:-ml-3.5 sm:px-3 sm:py-1.5;
+  }
+
+  .logo-skew-text {
+    @apply skew-x-[10deg] font-display text-[0.8125rem] font-extrabold leading-none tracking-tight text-white sm:text-sm md:text-[0.9375rem];
+  }
 }
 
 @layer base {

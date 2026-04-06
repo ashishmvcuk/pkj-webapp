@@ -70,7 +70,7 @@ Use this if you prefer CI to build Tailwind and push a clean deploy branch.
 
 ## Content
 
-- **Phone:** +91 93930 55583 (update in HTML if it changes.)
+- **Phone & WhatsApp:** +91 93030 56582 (`tel:+919303056582`). Floating button uses `js/whatsapp-float.js`.
 - **Instagram:** [pankaj_electronics_bpl](https://www.instagram.com/pankaj_electronics_bpl/)
 
 ## Google reviews

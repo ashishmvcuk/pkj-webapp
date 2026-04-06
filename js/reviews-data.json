@@ -21,5 +21,54 @@
   "disclaimerHi": "",
   "attributionEn": "Summaries shown when available are from Google Maps and may be abbreviated. See Google for full text and policies.",
   "fetchedAt": null,
-  "reviews": []
+  "reviews": [
+    {
+      "author": "Khushboo Agnani",
+      "rating": 5,
+      "relativeTime": "1 month ago",
+      "text": "Pankaj Electronics is truly outstanding! ✨ Their customer service is exceptional, and they genuinely value their customers. I'm so pleased with my recent purchase and the overall experience. Highly recommend them! 👍😊"
+    },
+    {
+      "author": "Surjeet Rajpoot",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Very good products and great services best staff and behavior"
+    },
+    {
+      "author": "Sapna Ahirwar",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Very polite behaviour and good finance facility I am surprised with offers"
+    },
+    {
+      "author": "Heer Yadav",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Nice person and good behaviour of all staff less price and great product"
+    },
+    {
+      "author": "Satyam Singh thakur",
+      "rating": 5,
+      "relativeTime": "3 months ago",
+      "text": "Nice 👍 im happy with shopping for mobile and other products bhopal best shop free gift 🎁 every item"
+    },
+    {
+      "author": "ravi gehlod",
+      "rating": 5,
+      "relativeTime": "2 months ago",
+      "text": "Veri nice product and best option and gift Thank you bheya"
+    },
+    {
+      "author": "Mahendra Dhangar",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Best finance services and good behaviour at all very sensible person"
+    },
+    {
+      "author": "rakesh kumar",
+      "rating": 5,
+      "relativeTime": "4 months ago",
+      "text": "Best prices and best experience nice staff and owner behaviour"
+    }
+  ]
 }

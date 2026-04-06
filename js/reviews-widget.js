@@ -1,6 +1,6 @@
 /**
- * Loads js/reviews-data.json (same directory as this script) and renders summary + review cards.
- * Run `npm run fetch-reviews` with GOOGLE_MAPS_API_KEY to refresh review snippets (Places API, max 5).
+ * Loads js/reviews-data.json and renders summary + a carousel of review cards.
+ * Run `npm run fetch-reviews` with GOOGLE_MAPS_API_KEY to replace `reviews` with API snippets (max 5).
  */
 (function () {
   "use strict";
@@ -32,7 +32,7 @@
   function renderReviewCard(r) {
     var card = el(
       "article",
-      "rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left shadow-sm"
+      "w-full max-w-xl rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left shadow-sm"
     );
     var head = el("div", "mb-2 flex flex-wrap items-center justify-between gap-2");
     var author = el("p", "font-semibold text-slate-900", r.author || "Google user");
@@ -52,6 +52,77 @@
       card.appendChild(p);
     }
     return card;
+  }
+
+  function wrapReviewSlide(r) {
+    var slide = el(
+      "div",
+      "flex min-w-full shrink-0 basis-full justify-center px-2 py-3 sm:px-4 sm:py-4"
+    );
+    slide.setAttribute("data-carousel-slide", "");
+    slide.appendChild(renderReviewCard(r));
+    return slide;
+  }
+
+  function buildReviewsCarousel(list) {
+    var outer = el("div", "mx-auto mb-6 w-full max-w-2xl");
+    outer.setAttribute("data-reviews-carousel", "");
+    outer.setAttribute("role", "region");
+    outer.setAttribute("aria-roledescription", "carousel");
+    outer.setAttribute("aria-label", "Recent Google customer reviews");
+
+    var viewport = el(
+      "div",
+      "relative min-h-[200px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100/90 ring-1 ring-slate-100 sm:min-h-[220px]"
+    );
+    viewport.setAttribute("data-carousel-viewport", "");
+
+    var track = el(
+      "div",
+      "flex w-full transition-transform duration-500 ease-out motion-reduce:transition-none"
+    );
+    track.setAttribute("data-carousel-track", "");
+    track.style.transform = "translateX(0px)";
+
+    list.forEach(function (r) {
+      track.appendChild(wrapReviewSlide(r));
+    });
+    viewport.appendChild(track);
+
+    var announcer = el("p", "sr-only", "Slide 1 of " + String(list.length));
+    announcer.setAttribute("aria-live", "polite");
+    announcer.setAttribute("data-carousel-announcer", "");
+    viewport.appendChild(announcer);
+
+    outer.appendChild(viewport);
+
+    var controls = el("div", "mt-3 flex items-center justify-center gap-3");
+    var prevBtn = document.createElement("button");
+    prevBtn.type = "button";
+    prevBtn.className =
+      "inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-brand-blue hover:text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/40";
+    prevBtn.setAttribute("data-carousel-prev", "");
+    prevBtn.setAttribute("aria-label", "Previous review");
+    prevBtn.innerHTML =
+      '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6" /></svg>';
+
+    var dotsWrap = el("div", "flex flex-wrap justify-center gap-1.5");
+    dotsWrap.setAttribute("data-carousel-dots", "");
+
+    var nextBtn = document.createElement("button");
+    nextBtn.type = "button";
+    nextBtn.className = prevBtn.className;
+    nextBtn.setAttribute("data-carousel-next", "");
+    nextBtn.setAttribute("aria-label", "Next review");
+    nextBtn.innerHTML =
+      '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6" /></svg>';
+
+    controls.appendChild(prevBtn);
+    controls.appendChild(dotsWrap);
+    controls.appendChild(nextBtn);
+    outer.appendChild(controls);
+
+    return outer;
   }
 
   function run() {
@@ -118,15 +189,22 @@
         if (list && list.length) {
           var h3 = el(
             "h3",
-            "mb-4 text-lg font-bold text-slate-900",
-            "Recent reviews (sample)"
+            "mb-1 text-lg font-bold text-slate-900",
+            "Recent Google reviews"
           );
           root.appendChild(h3);
-          var grid = el("div", "grid gap-4 md:grid-cols-2");
-          list.forEach(function (r) {
-            grid.appendChild(renderReviewCard(r));
-          });
-          root.appendChild(grid);
+          root.appendChild(
+            el(
+              "p",
+              "mb-4 text-center text-sm text-slate-500",
+              "Use arrows or dots; slides advance automatically like the store photo carousel."
+            )
+          );
+          var carousel = buildReviewsCarousel(list);
+          root.appendChild(carousel);
+          if (typeof window.pkjInitCarousel === "function") {
+            window.pkjInitCarousel(carousel);
+          }
 
           var attr = el(
             "p",

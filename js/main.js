@@ -55,9 +55,30 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
-  function initGalleryCarousel() {
-    var root = document.querySelector("[data-gallery-carousel]");
+  var __pkjCarouselVisibilityHooked = false;
+
+  function ensureCarouselVisibilityHook() {
+    if (__pkjCarouselVisibilityHooked) return;
+    __pkjCarouselVisibilityHooked = true;
+    document.addEventListener("visibilitychange", function () {
+      document
+        .querySelectorAll("[data-gallery-carousel], [data-reviews-carousel]")
+        .forEach(function (cr) {
+          if (!cr._pkjStopAuto || !cr._pkjStartAuto) return;
+          if (document.hidden) cr._pkjStopAuto();
+          else cr._pkjStartAuto();
+        });
+    });
+  }
+
+  /**
+   * One carousel instance (gallery photos or reviews). Exposed for async widgets.
+   * @param {Element} root — element with [data-gallery-carousel] or [data-reviews-carousel]
+   */
+  function pkjInitCarousel(root) {
     if (!root) return;
+
+    ensureCarouselVisibilityHook();
 
     var viewport = root.querySelector("[data-carousel-viewport]");
     var track = root.querySelector("[data-carousel-track]");
@@ -138,12 +159,14 @@
       timer = null;
     }
 
+    var dotKind = root.hasAttribute("data-reviews-carousel") ? "review" : "photo";
+
     if (dotsWrap) {
       slides.forEach(function (_, i) {
         var dot = document.createElement("button");
         dot.type = "button";
         dot.setAttribute("data-carousel-dot", "");
-        dot.setAttribute("aria-label", "Show photo " + String(i + 1));
+        dot.setAttribute("aria-label", "Show " + dotKind + " " + String(i + 1));
         dot.className =
           "rounded-full transition focus:outline-none focus:ring-2 focus:ring-brand-blue/40 " +
           (i === 0
@@ -198,28 +221,32 @@
       window.addEventListener("resize", applyLayout);
     }
 
+    root._pkjStopAuto = stopAuto;
+    root._pkjStartAuto = startAuto;
+
     window.setTimeout(function () {
       applyLayout();
       startAuto();
     }, 0);
-
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) stopAuto();
-      else startAuto();
-    });
   }
+
+  function initGalleryCarousels() {
+    document.querySelectorAll("[data-gallery-carousel]").forEach(pkjInitCarousel);
+  }
+
+  window.pkjInitCarousel = pkjInitCarousel;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       initReveal();
       initNav();
       initYear();
-      initGalleryCarousel();
+      initGalleryCarousels();
     });
   } else {
     initReveal();
     initNav();
     initYear();
-    initGalleryCarousel();
+    initGalleryCarousels();
   }
 })();

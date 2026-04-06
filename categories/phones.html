@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>मोबाइल — Pankaj Electronics भोपाल</title>
+    <meta name="description" content="स्मार्टफोन व मोबाइल एक्सेसरीज़ — पंकज इलेक्ट्रॉनिक्स, इतवारा भोपाल।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-2">
+          <span class="inline-block rounded border-2 border-brand-yellow bg-brand-blue px-2 py-0.5 text-sm font-bold text-white">पंकज</span>
+          <span class="hidden font-semibold text-brand-pink sm:inline">इलेक्ट्रॉनिक्स</span>
+        </a>
+        <nav class="hidden items-center gap-6 md:flex">
+          <a class="text-sm font-medium text-slate-700 hover:text-brand-blue" href="../index.html">होम</a>
+          <a class="text-sm font-medium text-brand-blue" href="index.html">श्रेणियाँ</a>
+          <a class="rounded-full bg-brand-pink px-4 py-2 text-sm font-semibold text-white" href="tel:+919393055583">कॉल</a>
+        </nav>
+        <button type="button" class="rounded-lg border border-slate-200 p-2 md:hidden" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="मेनू">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden border-t bg-white px-4 py-4 md:hidden" data-nav-panel aria-hidden="true">
+        <div class="flex flex-col gap-3">
+          <a class="py-2 font-medium" href="../index.html">होम</a>
+          <a class="py-2 font-medium" href="index.html">श्रेणियाँ</a>
+          <a class="rounded-lg bg-brand-blue py-3 text-center font-semibold text-white" href="tel:+919393055583">93930 55583</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="mb-6 text-sm text-slate-500">
+        <a href="../index.html" class="hover:text-brand-blue">होम</a>
+        <span class="mx-2">/</span>
+        <a href="index.html" class="hover:text-brand-blue">श्रेणियाँ</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-800">मोबाइल</span>
+      </nav>
+      <h1 class="mb-3 text-3xl font-bold" data-reveal>मोबाइल व स्मार्टफोन</h1>
+      <p class="mb-8 max-w-2xl text-slate-600" data-reveal>उदाहरण सूची — स्टॉक व कीमत के लिए दुकान पर पूछताछ करें या कॉल करें।</p>
+      <ul class="grid gap-4 sm:grid-cols-2">
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
+          <h2 class="font-bold text-slate-900">बजट स्मार्टफोन</h2>
+          <p class="mt-2 text-sm text-slate-600">दैनिक उपयोग के लिए विश्वसनीय मॉडल — विभिन्न ब्रांड।</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
+          <h2 class="font-bold text-slate-900">5G स्मार्टफोन</h2>
+          <p class="mt-2 text-sm text-slate-600">तेज़ डेटा व नए फीचर्स — उपलब्धता स्टोर पर।</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
+          <h2 class="font-bold text-slate-900">फीचर फोन</h2>
+          <p class="mt-2 text-sm text-slate-600">सरल कॉलिंग व लंबी बैटरी।</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md" data-reveal>
+          <h2 class="font-bold text-slate-900">चार्जर, केस, स्क्रीन गार्ड</h2>
+          <p class="mt-2 text-sm text-slate-600">एक्सेसरीज़ चुनिंदा मॉडलों के लिए।</p>
+        </li>
+      </ul>
+      <p class="mt-10" data-reveal>
+        <a href="tel:+919393055583" class="font-semibold text-brand-blue hover:underline">कॉल करें · 93930 55583</a>
+      </p>
+    </main>
+
+    <footer class="border-t bg-white py-8 text-center text-sm text-slate-500">
+      <a href="index.html" class="text-brand-pink hover:underline">← सभी श्रेणियाँ</a>
+    </footer>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>श्रेणियाँ — Pankaj Electronics भोपाल</title>
+    <meta name="description" content="मोबाइल, टीवी, बड़े व छोटे होम अप्लायंस — पंकज इलेक्ट्रॉनिक्स, भोपाल।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+        <a href="../index.html" class="group flex items-center gap-2">
+          <span class="inline-block rounded border-2 border-brand-yellow bg-brand-blue px-2 py-0.5 text-sm font-bold text-white">पंकज</span>
+          <span class="hidden font-semibold text-brand-pink sm:inline sm:text-lg">इलेक्ट्रॉनिक्स</span>
+        </a>
+        <nav class="hidden items-center gap-6 md:flex" aria-label="मुख्य">
+          <a class="text-sm font-medium text-slate-700 hover:text-brand-blue" href="../index.html#services">सेवाएँ</a>
+          <a class="text-sm font-medium text-brand-blue" href="index.html">श्रेणियाँ</a>
+          <a class="text-sm font-medium text-slate-700 hover:text-brand-blue" href="../index.html#contact">संपर्क</a>
+          <a class="rounded-full bg-brand-pink px-4 py-2 text-sm font-semibold text-white shadow-sm hover:brightness-110" href="tel:+919393055583">कॉल</a>
+        </nav>
+        <button
+          type="button"
+          class="inline-flex items-center justify-center rounded-lg border border-slate-200 p-2 md:hidden"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="मेनू"
+        >
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden border-t border-slate-100 bg-white px-4 py-4 md:hidden" data-nav-panel aria-hidden="true">
+        <div class="flex flex-col gap-3">
+          <a class="py-2 font-medium" href="../index.html#services">सेवाएँ</a>
+          <a class="py-2 font-medium" href="index.html">श्रेणियाँ</a>
+          <a class="py-2 font-medium" href="../index.html#contact">संपर्क</a>
+          <a class="rounded-lg bg-brand-blue py-3 text-center font-semibold text-white" href="tel:+919393055583">93930 55583</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="mb-6 text-sm text-slate-500" aria-label="ब्रेडक्रम्ब">
+        <a href="../index.html" class="hover:text-brand-blue">होम</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-800">श्रेणियाँ</span>
+      </nav>
+      <h1 class="mb-3 text-3xl font-bold" data-reveal>उत्पाद श्रेणियाँ</h1>
+      <p class="mb-10 max-w-2xl text-slate-600" data-reveal>नीचे दी सूची उदाहरण है; वास्तविक मॉडल व कीमत दुकान पर।</p>
+      <ul class="grid gap-4 sm:grid-cols-2">
+        <li data-reveal>
+          <a href="phones.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <h2 class="text-xl font-bold text-brand-blue">मोबाइल व स्मार्टफोन</h2>
+            <p class="mt-2 text-sm text-slate-600">Android / 5G — ब्रांड व स्टॉक स्टोर पर।</p>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="tvs.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <h2 class="text-xl font-bold text-brand-blue">टीवी व होम एंटरटेनमेंट</h2>
+            <p class="mt-2 text-sm text-slate-600">LED, Smart TV, साउंड।</p>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="large-appliances.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <h2 class="text-xl font-bold text-brand-blue">बड़े होम अप्लायंस</h2>
+            <p class="mt-2 text-sm text-slate-600">रेफ्रिजरेटर, वॉशिंग मशीन।</p>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="small-appliances.html" class="block rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-blue hover:shadow-md">
+            <h2 class="text-xl font-bold text-brand-blue">छोटे अप्लायंस</h2>
+            <p class="mt-2 text-sm text-slate-600">मिक्सर ग्राइंडर, आयरन, केतली।</p>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-8">
+      <div class="mx-auto max-w-6xl px-4 text-center text-sm text-slate-500">
+        <a href="../index.html" class="font-semibold text-brand-pink hover:underline">← होम</a>
+        <span class="mx-2">·</span>
+        © <span data-year></span> Pankaj Electronics
+      </div>
+    </footer>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

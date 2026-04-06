@@ -7,10 +7,16 @@
       (function () {
         var parts = location.pathname.split("/").filter(Boolean);
         if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) parts.pop();
-        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var dirBase = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var siteRoot = parts.length ? "/" + parts[0] + "/" : "/";
+        var head = document.head;
         var b = document.createElement("base");
-        b.href = basePath;
-        document.head.appendChild(b);
+        b.href = dirBase;
+        head.appendChild(b);
+        var l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = siteRoot + "assets/css/styles.css";
+        head.appendChild(l);
       })();
     </script>
     <title>Televisions — Pankaj Electronics, Bhopal</title>
@@ -18,7 +24,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body class="bg-slate-50 font-sans text-slate-800 antialiased">
     <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">

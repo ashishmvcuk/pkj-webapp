@@ -58,7 +58,7 @@ Use this if you prefer CI to build Tailwind and push a clean deploy branch.
 - **Source** must not be **Disabled**.
 - Repo name in the URL is **case-sensitive**: `/pkj-webapp/` must match the repo name exactly.
 
-**Relative URL quirk:** Opening `…/pkj-webapp` without a trailing slash used to break `assets/` paths; each HTML page sets `<base href>` from the path so CSS/JS resolve under `/pkj-webapp/`.
+**GitHub Pages + CSS:** Each page runs a small inline script that sets `<base href>` for navigation and **injects** the stylesheet as `/<repo>/assets/css/styles.css` (repo = first URL path segment). That avoids the browser preload scanner requesting `assets/…` against the wrong path before `<base>` exists, which could make the site look unstyled on [https://ashishmvcuk.github.io/pkj-webapp/](https://ashishmvcuk.github.io/pkj-webapp/).
 
 ## Images
 

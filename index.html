@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
+      /* Set <base> for nav links, then load CSS from site root (first URL segment).
+         A static <link href="assets/..."> can be fetched by the preload scanner BEFORE
+         this runs, resolving to the wrong path on GitHub Pages project sites. */
       (function () {
         var parts = location.pathname.split("/").filter(Boolean);
         if (parts.length && parts[parts.length - 1].indexOf(".") !== -1) {
           parts.pop();
         }
-        var basePath = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var dirBase = parts.length ? "/" + parts.join("/") + "/" : "/";
+        var siteRoot = parts.length ? "/" + parts[0] + "/" : "/";
+        var head = document.head;
         var b = document.createElement("base");
-        b.href = basePath;
-        document.head.appendChild(b);
+        b.href = dirBase;
+        head.appendChild(b);
+        var l = document.createElement("link");
+        l.rel = "stylesheet";
+        l.href = siteRoot + "assets/css/styles.css";
+        head.appendChild(l);
       })();
     </script>
     <title>Pankaj Electronics — Bhopal | Phones, TVs, Appliances & Repair</title>
@@ -26,7 +35,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

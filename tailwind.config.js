@@ -13,11 +13,12 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Noto Sans Devanagari",
+          "Inter",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
         ],
+        display: ["Outfit", "Inter", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-up": {

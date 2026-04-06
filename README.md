@@ -62,20 +62,20 @@ Use this if you prefer CI to build Tailwind and push a clean deploy branch.
 
 ## Images
 
-- **Hero:** [`images/hero-banner.png`](images/hero-banner.png) (your shop creative).
+- **Hero:** The home page uses a **sharp CSS “flyer”** (no scaled-up bitmap blur). Your uploaded flyer is saved as [`images/hero-banner-original.png`](images/hero-banner-original.png) for reference; replace or edit the hero block in `index.html` if you add a high-res photo later.
 - **Category tiles:** [`images/categories/`](images/categories/) — stock photos ([Unsplash](https://unsplash.com/license)), saved in-repo for fast loads. See [`images/categories/ATTRIBUTION.md`](images/categories/ATTRIBUTION.md).
+- **Store gallery:** [`images/gallery/`](images/gallery/) — real showroom photos (PNG) used on the home page **Inside our store** section.
 
 **Why not “images from Google”?** Google Image Search results are almost always copyrighted; hotlinking or copying them without permission is risky. For **your real shop photos**, upload them to [Google Business Profile](https://business.google.com/) and optionally pull them with the [Places API (Place Photos)](https://developers.google.com/maps/documentation/places/web-service/place-photos) at build time, or drop files into `images/` and link them in HTML.
 
 ## Content
 
 - **Phone:** +91 93930 55583 (update in HTML if it changes.)
-- **Hero image:** [`images/hero-banner.png`](images/hero-banner.png)
 - **Instagram:** [pankaj_electronics_bpl](https://www.instagram.com/pankaj_electronics_bpl/)
 
 ## Google reviews
 
-- **On the page:** Summary **4.6★ · 267 reviews** plus Google’s disclaimer (*Reviews aren’t verified by Google.* / Hindi) comes from [`js/reviews-data.json`](js/reviews-data.json), rendered by [`js/reviews-widget.js`](js/reviews-widget.js).
+- **On the page:** Summary **4.6★ · 267 reviews** plus Google’s disclaimer (*Reviews aren’t verified by Google.*) comes from [`js/reviews-data.json`](js/reviews-data.json), rendered by [`js/reviews-widget.js`](js/reviews-widget.js).
 - **Review snippets:** Google’s Places API returns at most **5** reviews per request. To refresh `reviews-data.json` (rating, count, URLs, snippets):
 
   ```bash

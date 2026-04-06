@@ -89,13 +89,28 @@
             String(rc) + " reviews"
           )
         );
-        mid.appendChild(el("p", "text-sm text-slate-600", "Google Maps"));
+        mid.appendChild(el("p", "text-sm text-slate-600", "on Google Maps"));
+        var tr = data.trust;
+        if (tr && tr.reviewsHeadline) {
+          var trustLine =
+            tr.reviewsHeadline +
+            (tr.reviewsSubline ? " " + tr.reviewsSubline : "");
+          mid.appendChild(
+            el(
+              "p",
+              "mt-2 max-w-md text-sm font-semibold leading-snug text-slate-800",
+              trustLine
+            )
+          );
+        }
         row.appendChild(mid);
         summary.appendChild(row);
 
         var disc = el("div", "mt-6 border-t border-slate-100 pt-4 text-center text-sm text-slate-500");
         disc.appendChild(el("p", "mb-1", data.disclaimerEn || ""));
-        disc.appendChild(el("p", "font-medium text-slate-600", data.disclaimerHi || ""));
+        if (data.disclaimerHi) {
+          disc.appendChild(el("p", "font-medium text-slate-600", data.disclaimerHi));
+        }
         summary.appendChild(disc);
         root.appendChild(summary);
 
@@ -138,7 +153,7 @@
           a.href = mapsUrl;
           a.target = "_blank";
           a.rel = "noopener noreferrer";
-          a.textContent = "सभी समीक्षाएँ Google पर";
+          a.textContent = "All reviews on Google";
           var wrap = el("div", "text-center");
           wrap.appendChild(a);
           root.appendChild(wrap);
@@ -146,7 +161,7 @@
       })
       .catch(function () {
         root.innerHTML =
-          '<p class="text-center text-slate-600">Could not load review data. <a class="font-semibold text-brand-blue underline" href="https://www.google.com/maps/search/?api=1&query=Shop+36+Pankaj+Electronics+Bhopal+462001">View on Google Maps</a></p>';
+          '<p class="text-center text-slate-600">Could not load review data. <a class="font-semibold text-brand-blue underline" href="https://www.google.com/maps/search/?api=1&query=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Bhopal+462001">View on Google Maps</a></p>';
       });
   }
 

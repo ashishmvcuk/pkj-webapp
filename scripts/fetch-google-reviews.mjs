@@ -5,7 +5,7 @@
  *
  *   GOOGLE_MAPS_API_KEY=your_key npm run fetch-reviews
  *
- * Writes: js/reviews-data.json (preserves disclaimers; updates aggregate + reviews).
+ * Writes: js/reviews-data.json (preserves disclaimers, trust, marqueeExtras; updates aggregate + reviews).
  */
 
 import { readFileSync, writeFileSync } from "fs";
@@ -19,7 +19,7 @@ const outPath = join(root, "js", "reviews-data.json");
 const KEY = process.env.GOOGLE_MAPS_API_KEY;
 const SEARCH_QUERY =
   process.env.PLACES_SEARCH_QUERY ||
-  "Pankaj Electronics Shop 36 Itwara Road Sarafa Chowk Bhopal 462001 India";
+  "Pankaj Electronics No 36 Itwara Road Sarafa Chowk Ibrahimpura Peer Gate Bhopal 462001 India";
 
 const baseDisclaimers = {
   disclaimerEn: "Reviews aren't verified by Google.",
@@ -104,6 +104,10 @@ async function main() {
       reviewCount:
         result.user_ratings_total ?? existing.aggregateRating?.reviewCount ?? 267,
     },
+    ...(existing.trust ? { trust: existing.trust } : {}),
+    marqueeExtras: Array.isArray(existing.marqueeExtras)
+      ? existing.marqueeExtras
+      : [],
     ...baseDisclaimers,
     fetchedAt: new Date().toISOString(),
     placeId,

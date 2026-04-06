@@ -1,12 +1,24 @@
 {
   "businessName": "Pankaj Electronics",
-  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Shop+36+Pankaj+Electronics+Itwara+Rd+Sarafa+Chowk+Bhopal+462001+India",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=No+36+Itwara+Rd+Sarafa+Chowk+Ibrahimpura+Peer+Gate+Bhopal+462001",
   "aggregateRating": {
     "ratingValue": 4.6,
     "reviewCount": 267
   },
+  "trust": {
+    "tagline": "Trusted brand in Bhopal",
+    "instagramFollowers": "49K+",
+    "instagramUrl": "https://www.instagram.com/pankaj_electronics_bpl/",
+    "reviewsHeadline": "300+",
+    "reviewsSubline": "reviews across Google Maps, IndiaMART & more"
+  },
+  "marqueeExtras": [
+    "Easy EMI with partner finance",
+    "Phones, TVs & home appliances",
+    "Same-day guidance at the store"
+  ],
   "disclaimerEn": "Reviews aren't verified by Google.",
-  "disclaimerHi": "समीक्षाएँ Google द्वारा सत्यापित नहीं हैं।",
+  "disclaimerHi": "",
   "attributionEn": "Summaries shown when available are from Google Maps and may be abbreviated. See Google for full text and policies.",
   "fetchedAt": null,
   "reviews": []

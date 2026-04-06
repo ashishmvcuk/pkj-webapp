@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Sharp hero “flyer” — replaces low-res bitmap */
+@layer components {
+  .hero-flyer {
+    background-color: #f8fafc;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgb(15 23 42 / 0.06) 1px,
+      transparent 0
+    );
+    background-size: 18px 18px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -56,6 +69,38 @@
   box-shadow:
     0 1px 3px 0 rgb(0 0 0 / 0.1),
     0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Footer reviews ticker — scrolls left-to-right (track moves +X; duplicate groups for seamless loop) */
+@keyframes footer-marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.footer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: footer-marquee-ltr 55s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-marquee-track {
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.5rem;
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .footer-marquee-track > div:last-child {
+    display: none;
+  }
 }
 
 @layer utilities {
